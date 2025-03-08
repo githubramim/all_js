@@ -56,3 +56,26 @@ class Country{
 const mycountry = new Country("Bangladesh");
 
 console.log(mycountry.countryname());
+
+// Class Inheritance 
+
+
+class Brand{
+    constructor(name){
+        this.brand = name;
+    }
+    newFunc(){
+        return "I have a " + this.brand
+    }
+}
+class Model extends Brand{
+    constructor(name, model){
+        super(name);
+        this.model = model;
+    }
+    show(){
+        return this.newFunc() + ", it is a " + this.model
+    }
+}
+const thecar = new Model("Ford", "Mustang")
+console.log(thecar.show())
