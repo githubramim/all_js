@@ -60,22 +60,49 @@ console.log(mycountry.countryname());
 // Class Inheritance 
 
 
-class Brand{
-    constructor(name){
+// Parent (Base) ক্লাস `Brand` তৈরি করা হলো
+class Brand {
+    constructor(name) {
+        // `brand` নামে একটি প্রপার্টি সেট করা হলো
         this.brand = name;
     }
-    newFunc(){
-        return "I have a " + this.brand
+
+    // `newFunc` মেথড তৈরি করা, যা ব্র্যান্ডের নাম রিটার্ন করবে
+    newFunc() {
+        return "I have a " + this.brand;
     }
 }
-class Model extends Brand{
-    constructor(name, model){
+
+// `Brand` ক্লাস থেকে `Model` নামে একটি নতুন চাইল্ড ক্লাস তৈরি করা হলো
+class Model extends Brand {
+    constructor(name, model) {
+        // `super(name)` দিয়ে প্যারেন্ট `Brand` ক্লাসের কনস্ট্রাক্টর কল করা হলো
         super(name);
+        // `model` নামে নতুন একটি প্রপার্টি সেট করা হলো
         this.model = model;
     }
-    show(){
-        return this.newFunc() + ", it is a " + this.model
+
+    // `show` মেথড তৈরি করা হলো, যা গাড়ির নাম ও মডেল দেখাবে
+    show() {
+        return this.newFunc() + ", it is a " + this.model;
     }
 }
-const thecar = new Model("Ford", "Mustang")
-console.log(thecar.show())
+
+// `Model` ক্লাসের একটি নতুন অবজেক্ট তৈরি করা হলো
+const thecar = new Model("Ford", "Mustang");
+
+// `show` মেথড কল করে আউটপুট কনসোলে দেখানো হলো
+console.log(thecar.show()); 
+
+// Output: "I have a Ford, it is a Mustang"
+
+
+class Practice{
+    constructor(namee){
+        this.name = namee
+    }    
+}
+
+const namee = new Practice("Ramim")
+
+console.log(namee.name)
